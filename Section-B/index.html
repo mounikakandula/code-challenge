@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MyToken Transfer</title>
+  </head>
+  <body>
+    <div class="min-h-screen bg-gradient-to-br from-emerald-50 to-teal-50">
+      <div class="container mx-auto px-4 py-8 max-w-4xl">
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+          <!-- Header -->
+          <div class="bg-emerald-600 text-white p-6">
+            <h1 class="text-2xl font-bold">MyToken (0.0.56789)</h1>
+            <div class="flex gap-4 mt-2">
+              <p class="text-emerald-100">Treasury Balance: <span id="treasuryBalance">950</span></p>
+              <p class="text-emerald-100">Recipient Balance: <span id="recipientBalance">50</span></p>
+            </div>
+          </div>
+
+          <!-- Token Management -->
+          <div class="p-6 space-y-6">
+            <!-- Mint Tokens -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h2 class="text-lg font-semibold text-gray-800 mb-4">Mint New Tokens</h2>
+              <div class="flex gap-4">
+                <input
+                  type="number"
+                  id="mintAmount"
+                  placeholder="Amount to mint"
+                  class="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                />
+                <button
+                  id="mintButton"
+                  class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2"
+                >
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12h8"/><path d="M12 8v8"/></svg>
+                  <span>Mint</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Transfer Tokens -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h2 class="text-lg font-semibold text-gray-800 mb-4">Transfer Tokens</h2>
+              <div class="flex gap-4">
+                <input
+                  type="number"
+                  id="transferAmount"
+                  placeholder="Amount to transfer"
+                  class="flex-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                />
+                <button
+                  id="transferButton"
+                  class="bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors flex items-center gap-2"
+                >
+                  <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="m5 12 7-7 7 7"/></svg>
+                  <span>Transfer</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Transaction History -->
+          <div class="border-t">
+            <div class="p-6">
+              <h2 class="text-lg font-semibold text-gray-800 mb-4">Transaction History</h2>
+              <div id="transactions" class="space-y-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
