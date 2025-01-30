@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Scheduler</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .event-form {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .events-list {
+            margin-top: 20px;
+        }
+        .event-item {
+            background: #fff;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .conflict {
+            background: #ffe6e6;
+            border-color: #ff9999;
+        }
+        .conflicts-list {
+            color: #cc0000;
+            margin-top: 20px;
+        }
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+        }
+        li {
+            color: #006600;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>EVENT SCHEDULER</h1>
+    
+    <div class="event-form">
+        <h2>Add New Event</h2>
+        <form id="eventForm">
+            <div>
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName" required>
+            </div>
+            <div>
+                <label for="startTime">Start Time:</label>
+                <input type="time" id="startTime" required>
+            </div>
+            <div>
+                <label for="endTime">End Time:</label>
+                <input type="time" id="endTime" required>
+            </div>
+            <button type="submit">Add Event</button>
+        </form>
+    </div>
+
+    <div class="events-list">
+        <h2>Scheduled Events</h2>
+        <div id="eventsList"></div>
+    </div>
+
+    <div class="conflicts-list">
+        <h2>Conflicts</h2>
+        <div id="conflictsList"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
